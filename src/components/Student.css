@@ -1,7 +1,7 @@
-.green {
-    background-color: greenyellow;
+.Student .nickname {
+  background-color: greenyellow; /* Default background color */
 }
-  
-.red {
-    background-color: lightcoral;
+
+.Student.absent .nickname {
+  background-color: lightcoral; /* Background color for absent */
 }
