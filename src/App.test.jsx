@@ -1,5 +1,5 @@
 import App from './App';
-import { render, act } from '@testing-library/react';
+import { fireEvent, render, act } from '@testing-library/react';
 
 describe('App rendering', () => {
   test('expected number of students are shown', async () => {
@@ -75,8 +75,8 @@ describe('App rendering', () => {
     const addButton = app.container.querySelector('input[type="submit"]');
 
     await act(async () => {
-      nameInput.value = newStudent.nameData;
-      emailInput.value = newStudent.emailData;
+      fireEvent.change(nameInput, { target: { value: newStudent.nameData } });
+      fireEvent.change(emailInput, { target: { value: newStudent.emailData } });
       addButton.click();
     });
 
